@@ -47,7 +47,6 @@ export async function runAgent({ prompt }: { prompt: string }): Promise<{ text: 
         ? JSON.parse(call.function.arguments)
         : call.function.arguments;
 
-      // The assignment explicitly requires us to fetch our own API here
       const PORT = process.env.PORT || 3001;
       const filterRes = await fetch(`http://localhost:${PORT}/notes/filter?query=${encodeURIComponent(args.query)}`);
       messages.push({ role: 'tool', content: await filterRes.text() });

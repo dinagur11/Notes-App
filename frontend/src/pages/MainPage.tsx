@@ -66,10 +66,7 @@ function MainPage() {
   const cacheRef = useRef<Record<number, Note[]>>({});
   const isLogged = user !== null;
 
-  // HW4 addition: sanitizer toggle. React state only — defaults to ON, resets on refresh.
   const [sanitizerOn, setSanitizerOn] = useState(true);
-
-  // Dina's caching: clear the cache first when notes change, so the fetch effect repopulates fresh.
   useEffect(() => {
     cacheRef.current = {};
   }, [state.changesCounter]);

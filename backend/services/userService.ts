@@ -10,7 +10,7 @@ export const authenticateUser = async (username: string, password: string) => {
   if (await bcrypt.compare(password, user.passwordHash)) {
     const token = jwt.sign(
       { id: user._id, username: user.username, name: user.name, email: user.email },
-      process.env.SECRET as string,   // ← must be SECRET, not JWT_SECRET
+      process.env.SECRET as string,  
       { expiresIn: '24h' }
     );
     const { passwordHash, ...safeUser } = user.toObject();
