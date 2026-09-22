@@ -1,0 +1,141 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+
+  /* 🎨 Colors */
+  --bg-main: #fff8e7;        /* pastel yellow */
+  --bg-card: #fffdf7;        /* lighter card */
+  --border: #e6d7b9;
+
+  --text-main: #4b3621;      /* dark brown */
+  --text-secondary: #7a5c3e;
+
+  --primary: #c89b5a;        /* warm gold */
+  --primary-hover: #b5894d;
+
+  --nav-btn: #8b6b4a;
+  --nav-btn-hover: #72563a;
+
+  color: var(--text-main);
+  background-color: var(--bg-main);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Container */
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  color: #5c3d1c;
+}
+
+/* Notes list */
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+/* Note card */
+.note {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(100, 70, 30, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(100, 70, 30, 0.12);
+}
+
+.note h2 {
+  margin: 0 0 8px;
+  color: #5a3f24;
+}
+
+.note small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+/* Pagination */
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background-color: var(--primary);
+  color: #fffaf0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background-color: #e6d7b9;
+  color: #9c8a73;
+  cursor: not-allowed;
+}
+
+/* Current page */
+button[disabled][name^="page-"] {
+  background-color: #6b4f2b;
+  color: white;
+  font-weight: bold;
+}
+
+/* Nav buttons */
+button[name="first"],
+button[name="previous"],
+button[name="next"],
+button[name="last"] {
+  background-color: var(--nav-btn);
+}
+
+button[name="first"]:hover:not(:disabled),
+button[name="previous"]:hover:not(:disabled),
+button[name="next"]:hover:not(:disabled),
+button[name="last"]:hover:not(:disabled) {
+  background-color: var(--nav-btn-hover);
+}

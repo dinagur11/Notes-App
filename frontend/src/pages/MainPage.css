@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Notification */
+
+.notification {
+  background-color: #1e293b;
+  color: white;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title h1 {
+  margin-bottom: 0.3rem;
+  font-size: 3rem;
+  color: #111827;
+}
+
+.title h2 {
+  margin-top: 0;
+  font-weight: normal;
+  color: #6b7280;
+}
+
+/* New note section */
+
+.new-note-area {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  resize: vertical;
+  background-color: white;
+}
+
+textarea {
+  min-height: 120px;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Notes */
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.note {
+  background-color: white;
+  padding: 1.3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease;
+}
+
+.note:hover {
+  transform: translateY(-2px);
+}
+
+.note h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.note small {
+  color: #64748b;
+}
+
+.note p {
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+/* Buttons */
+
+button {
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Pagination */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Active page */
+
+button[disabled][name^="page-"] {
+  font-weight: bold;
+  background-color: #0f172a;
+}
